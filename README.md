@@ -17,6 +17,8 @@ Snakemake file and R scripts for search viruses of metagenomic RNA reads made in
   - samtools (https://github.com/samtools/samtools);
   - SPAdes (https://github.com/ablab/spades);
   - BLAST and its local nt database (https://blast.ncbi.nlm.nih.gov/Blast.cgi);
+  - International Committee on Taxonomy of Viruses: ICTV (https://ictv.global/);
+  - Reference Viral DataBase (RVDB) (https://rvdb.dbi.udel.edu/);
   - viralVerify: viral contig verification tool (https://github.com/ablab/viralVerify);
   - seqkit (https://github.com/shenwei356/seqkit)
   - R and its libraries:
