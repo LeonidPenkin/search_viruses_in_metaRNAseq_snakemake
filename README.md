@@ -1,7 +1,7 @@
 # search_viruses_in_metaRNAseq_snakemake
 
 Snakemake file and R scripts for search viruses of metagenomic RNA reads made in Laboratory of Bioinformatics at Research Institute for Systems Biology and Medicine (RISBM).
-This script is a continuation of the idea of the taxo_class_snakemake script (https://github.com/ISonets/taxo_class_snakemake/tree/main). This script is adapted to search for viruses in meta RNAseq samples. The algorithm uses a script to search three virus sequence databases (NCBI, RVDB, ICTV). Sequences not found in this data are additionally checked using the algorithm viralverify.
+This algorithm is a continuation of the idea of the taxo_class_snakemake algorithm (https://github.com/ISonets/taxo_class_snakemake/tree/main). This algorithm is adapted to search for viruses in meta RNAseq samples. The algorithm uses a script to search three virus sequence databases (NCBI, RVDB, ICTV). Sequences not found in this data are additionally checked using the algorithm viralverify.
 
 ## Prerequisites:
 
