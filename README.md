@@ -15,13 +15,15 @@ Snakemake file and R scripts for search viruses of metagenomic RNA reads made in
   - CAT/BAT and its local database (https://github.com/dutilh/CAT);
   - Hisat2 (http://daehwankimlab.github.io/hisat2/);
   - samtools (https://github.com/samtools/samtools);
-  - bedtools (https://github.com/arq5x/bedtools2);
   - SPAdes (https://github.com/ablab/spades);
   - BLAST and its local nt database (https://blast.ncbi.nlm.nih.gov/Blast.cgi);
+  - viralVerify: viral contig verification tool (https://github.com/ablab/viralVerify);
+  - seqkit (https://github.com/shenwei356/seqkit)
   - R and its libraries:
     - taxonomizr (https://github.com/sherrillmix/taxonomizr),
     - dplyr (https://dplyr.tidyverse.org/), 
-    - readxl (https://readxl.tidyverse.org/), 
+    - readxl (https://readxl.tidyverse.org/),
+    - plyr (http://had.co.nz/plyr/ ),
     - reshape (https://cran.r-project.org/web/packages/reshape/index.html);
   
     **Note**: for taxonomizr library you need local database, but for our purposes accession ids do not needed, to achieve this, use `getAccessions=FALSE`
