@@ -1,0 +1,10 @@
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-dplyr
+  - r-writexl
+  - r-taxonomizr
+  - r-readxl
+  - r-reshape
+  - r-tidyverse
