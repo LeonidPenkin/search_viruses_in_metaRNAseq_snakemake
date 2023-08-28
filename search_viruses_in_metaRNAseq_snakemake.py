@@ -12,7 +12,6 @@ base2 = "/mnt/disk1/PROJECTS/SURPRISE/test/"
 
 SAMPLES = [s.split('/')[-1].replace(suffix_1, '') for s in glob.glob(base+'*'+suffix_1)]
 
-# SAMPLES = glob_wildcards(base +"{sample}"+suffix_1)
 
 print(SAMPLES)
 print(base)
@@ -136,8 +135,7 @@ rule catbat_taxonomy_contigs:
     conda: "envs/R-packages_env.yaml"
     shell: """
           Rscript r_scripts/taxonomizr_catbat_filtered_eukaryote.R {input.catbat_taxo}
-         # mkdir xlsx
-         # mv {output.catbat_contigs_anno} xlsx/
+
     """
     
 rule contigs_negativ_selection:
