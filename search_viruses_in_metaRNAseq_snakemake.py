@@ -14,9 +14,6 @@ SAMPLES = [s.split('/')[-1].replace(suffix_1, '') for s in glob.glob(base+'*'+su
 
 # SAMPLES = glob_wildcards(base +"{sample}"+suffix_1)
 
-SAMPLES = ['Reab22_1_k', 'Reab22_3_k']
-#SAMPLES = ['Reab22_3_k']
-#SAMPLES = ['Bats2015_27_S5', 'Bats2015_20_S3', 'Bats2015_31_S7', 'Bats2015_19_S2', 'Bats2015_30_S6', 'Bats2015_21_S4', 'Bats2015_16_S1']
 print(SAMPLES)
 print(base)
 print(base2)
