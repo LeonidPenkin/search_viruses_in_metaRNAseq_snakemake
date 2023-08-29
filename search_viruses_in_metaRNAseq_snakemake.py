@@ -18,19 +18,6 @@ print(base)
 print(base2)
 Output_blasts = ["results/blast_ICTV/contigs_ICTV_na_vir_blastn/", "results/blast_ICTV/contigs_ICTV_na_vir_blastn/", "results/blast_ICTV/contigs_ICTV_na_vir_blastn/"]
 want_all = []
-want_all.append(expand(base2+"results/fastp/{sample}_R1.fastq.gz", sample=SAMPLES))
-want_all.append(expand(base2+"results/contigs/{sample}.fasta", sample=SAMPLES))
-want_all.append(expand(base2+"results/contigs/filt_contigs/{sample}_l500.fasta", sample=SAMPLES))
-want_all.append(expand(base2+"results/kraken2/contigs/{sample}.out", sample=SAMPLES))
-want_all.append(expand(base2+"results/kraken2/contigs/{sample}.contigs.taxo.txt", sample=SAMPLES))
-want_all.append(expand(base2+"results/catbat/catbat_res_{sample}_c2c.txt", sample=SAMPLES))
-want_all.append(expand(base2+"results/catbat/catbat_res_{sample}_true.names", sample=SAMPLES))
-want_all.append(expand(base2+"results/catbat/catbat_res_{sample}.contigs.taxo.txt", sample=SAMPLES))
-want_all.append(expand(base2+"results/viruses_filtered_contigs/{sample}_l500_viruses_filtered_contigs.fasta", sample=SAMPLES))
-want_all.append(expand(base2+"results/blast_ICTV/contigs_ICTV_na_vir_blastn/{sample}_l500_blastres.out", sample=SAMPLES))
-want_all.append(expand(base2+"results/blast_RVDB/contigs_RVDB_na_vir_blastn/{sample}_l500_blastres.out", sample=SAMPLES))
-want_all.append(expand(base2+"results/blast_NCBI/contigs_NCBI_na_vir_blastn/{sample}_l500_blastres.out", sample=SAMPLES))
-want_all.append(expand(base2+"results/contigs_viralverify/{sample}/Prediction_results_fasta/{sample}_l500_viruses_filtered_contigs_all_viruses.txt", sample=SAMPLES))
 want_all.append(expand(base2+"results/contigs_blastres_ICTV_RVDB_NCBI_with_host_ICTV_and_NCBI.xlsx"))
 want_all.append(expand(base2+"results/unknown_contigs/{sample}_l500_blastres_viruses_contig.txt", sample=SAMPLES))
 
@@ -59,9 +46,6 @@ rule contigs:
     conda: "envs/contigs_env.yaml"
     shell: """
             megahit -t {threads} -m 400 -1 {input.read1_trim} -2 {input.read2_trim} -o {params.outfolder}
-            #spades.py --meta -t {threads} -m 400 --only-assembler -1 {input.read1_trim} -2 {input.read2_trim} -o {params.outfolder}
-            #spades.py --metaviral -t {threads}  -m 400 --only-assembler -1 {input.read1_trim} -2 {input.read2_trim} -o {params.outfolder}
-            #spades.py --rnaviral -t {threads} -m 400 --only-assembler -1 {input.read1_trim} -2 {input.read2_trim} -o {params.outfolder}
             cp {params.outfolder}/final.contigs.fa {output.res_file}
     """
 
