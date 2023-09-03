@@ -67,8 +67,10 @@ for(location in 1:length(bases)){
     colnames(viruses) <- c("Virus.GENBANK.accession.blastres", "sum_nucleotides", "qseqid", "sseqid", "slen", "stitle", "contig_len", "coverege", "locathion_file", "filtered_len", "metod", "Realm", "Subrealm", "Kingdom", "Subkingdom", "Phylum", "Subphylum", "Class", "Subclass", "Order", "Suborder", "Family", "Subfamily", "Genus", "Subgenus", "Species", "Exemplar.or.additional.isolate", "Virus.name.s.", "Virus.name.abbreviation.s.", "Virus.isolate.designation", "Virus.GENBANK.accession", "Virus.REFSEQ.accession", "Genome.coverage", "Genome.composition", "Host.source", "NCBI_virus_name", "NCBI_host")
     viruses$sample_name <- sub('_l500_blastres.out', '', file_name)
     
-    ifelse(metod == "RVDB", stitle_index <- 4, stitle_index <- 3)
-    ifelse(metod == "NCBI", stitle_index <- 2, stitle_index <- 3)    
+    stitle_index <- 3
+    ifelse(metod == "RVDB", stitle_index <- 4, stitle_index)
+    ifelse(metod == "NCBI", stitle_index <- 2, stitle_index)
+    
     viruses$name_viruses_in_database <- data.frame(do.call('rbind', strsplit(as.character(viruses$stitle),'|',fixed=TRUE)))[,stitle_index]
  
     viruses$coverege_round <- round(viruses$coverege, digits = 1)
