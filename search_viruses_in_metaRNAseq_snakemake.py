@@ -143,7 +143,7 @@ rule contigs_blasts_ICTV:
     threads: 5
     conda: "envs/blast_env.yaml"
     shell: """
-           blastn -query {input.contigs_filt} -db {params.ref} -num_threads {threads} -evalue 1e-5 -task 'blastn' -outfmt '6 std slen qlen stitle' -out {output.blast_out_na}
+           blastn -query {input.contigs_filt} -db {params.ref} -max_target_seqs 1 -max_hsps 1 -num_threads {threads} -evalue 1e-5 -task 'blastn' -outfmt '6 std slen qlen stitle' -out {output.blast_out_na}
     """
     
 rule contigs_blasts_RVDB:
@@ -153,7 +153,7 @@ rule contigs_blasts_RVDB:
     threads: 5
     conda: "envs/blast_env.yaml"
     shell: """
-           blastn -query {input.contigs_filt} -db {params.ref} -num_threads {threads} -evalue 1e-5 -task 'blastn' -outfmt '6 std slen qlen stitle' -out {output.blast_out_na}
+           blastn -query {input.contigs_filt} -db {params.ref} -max_target_seqs 1 -max_hsps 1 -num_threads {threads} -evalue 1e-5 -task 'blastn' -outfmt '6 std slen qlen stitle' -out {output.blast_out_na}
     """
     
 rule contigs_blasts_NCBI_viruses:
@@ -163,7 +163,7 @@ rule contigs_blasts_NCBI_viruses:
     threads: 5
     conda: "envs/blast_env.yaml"
     shell: """
-           blastn -query {input.contigs_filt} -db {params.ref} -num_threads {threads} -evalue 1e-5 -task 'blastn' -outfmt '6 std slen qlen stitle' -out {output.blast_out_na}
+           blastn -query {input.contigs_filt} -db {params.ref} -max_target_seqs 1 -max_hsps 1 -num_threads {threads} -evalue 1e-5 -task 'blastn' -outfmt '6 std slen qlen stitle' -out {output.blast_out_na}
     """
     
 rule contigs_viralverify:
