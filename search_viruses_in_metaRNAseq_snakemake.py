@@ -179,7 +179,7 @@ rule contigs_viralverify:
     shell: """
            viralverify -f {input.contigs_filt} -t {threads} --hmm {params.db} -o {params.outfolder}
            cat {output.contigs_viralverify1} {output.contigs_viralverify2} > {output.contigs_viralverify3} || true
-           cat {output.contigs_viralverify3} | grep ">" | sed 's/>//' > {output.contigs_viralverify4} || true
+           cat {output.contigs_viralverify3} | grep ">" | sed 's/>//g' > {output.contigs_viralverify4} || true
     """
 
 rule make_xlsx:
